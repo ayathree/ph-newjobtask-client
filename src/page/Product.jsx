@@ -2,29 +2,99 @@ import { useEffect, useState } from "react";
 
 const Product = () => {
     const [products, setProducts] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1); // Track the current page
-    const [totalPages, setTotalPages] = useState(1); // Track total pages available
-    const productsPerPage = 6; // Set the number of products per page
+    const [currentPage, setCurrentPage] = useState(1); 
+    const [totalPages, setTotalPages] = useState(1); 
+    const [filter,setFilter]=useState('')
+    const [filterTwo,setFilterTwo]=useState('')
+    const [sort, setSort]=useState('')
+    const productsPerPage = 6; 
     const btnNumbers = [...Array(totalPages).keys()].map(element => element + 1);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allProducts?page=${currentPage}&limit=${productsPerPage}`)
+        fetch(`http://localhost:5000/allProducts?page=${currentPage}&limit=${productsPerPage}&filter=${filter}&filterTwo=${filterTwo}&sort=${sort}`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data.products);
-                setTotalPages(data.totalPages); // Set total pages based on response
+                setTotalPages(data.totalPages);
             });
-    }, [currentPage]); // Fetch data again whenever currentPage changes
+    }, [currentPage,filter,filterTwo,sort]); 
 
     return (
         <div>
             {/* <h2>Products Available: {products.length} </h2> */}
+           <div className="flex flex-col lg:flex-row justify-between items-center ">
+           <div>
+           <p>Category Name</p>
+            <select onChange={e=>setFilter(e.target.value)} value={filter} name="category" className="select select-error w-full max-w-xs">
+  <option></option>
+  <option>Kitchenware</option>
+  <option>Electronics</option>
+  <option>Bedding</option>
+  <option>Furniture</option>
+  <option>Fitness</option>
+  <option>Footwear</option>
+  <option>Apparel</option>
+  <option>Outdoors</option>
+  <option>Personal Care</option>
+</select>
+           </div>
+           <div>
+           <p>Brand Name</p>
+            <select onChange={e=>setFilterTwo(e.target.value)} value={filterTwo} name="brand" className="select select-error w-full max-w-xs">
+<option></option>
+  <option>HydraFlow</option>
+ <option >GreenSip</option>
+ <option >HeatWave</option>
+ <option >QuietTunes</option>
+ <option >DreamLand</option>
+ <option >BrightHome</option>
+ <option >SoundWave</option>
+ <option >ComfortZone</option>
+ <option >FitFlex</option>
+ <option >SpeedRun</option>
+ <option >UrbanStyle</option>
+ <option >TechGear</option>
+ <option >HealthWatch</option>
+ <option >PureWater</option>
+ <option >CaféBrew</option>
+ <option >FreshSqueeze</option>
+ <option >AdventureGear</option>
+ <option >EcoControl</option>
+ <option >PureAir</option>
+ <option >BrightSmile</option>
+ <option >GlowSkin</option>
+ <option >SafeHome</option>
+ </select>
+ 
+
+
+           </div>
+           <div>
+           <p>Sorting By</p>
+            <select onChange={e=>setSort(e.target.value)} value={sort} name="sort" className="select select-error w-full max-w-xs">
+  <option></option>
+  <option value='low'>Price Low to High</option>
+  <option value='high'>Price High to Low</option>
+  <option value='new'>Date Newest first</option>
+  
+</select>
+
+           </div>
+           </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center">
                 {products.map(product => (
                     <div key={product.id} className="card bg-purple-200 m-5 shadow-xl">
                         <div className="card-body">
                             <h2 className="card-title">
                                 {product.productName}
+                                <br />
+                                {product.categoryName}
+                                <br />
+                                {product.brandName}
+                                <br />
+                                {product.dateAdded}
+                                <br />
+                                {product.price}
                                 <div className="badge badge-secondary">NEW</div>
                             </h2>
                             <p>Product description or details go here.</p>
