@@ -1,0 +1,362 @@
+[
+    {
+        "image": "https://example.com/images/product1.jpg",
+        "productName": "Wireless Headphones",
+        "brandName": "SoundMagic",
+        "categoryName": "Electronics",
+        "price": 59.99,
+        "date": "2024-08-01",
+        "ratings": 4.5
+    },
+    {
+        "image": "https://example.com/images/product2.jpg",
+        "productName": "Smartphone X",
+        "brandName": "TechMax",
+        "categoryName": "Electronics",
+        "price": 899.99,
+        "date": "2024-08-05",
+        "ratings": 4.7
+    },
+    {
+        "image": "https://example.com/images/product3.jpg",
+        "productName": "Yoga Mat",
+        "brandName": "FlexFit",
+        "categoryName": "Fitness",
+        "price": 29.99,
+        "date": "2024-07-25",
+        "ratings": 4.3
+    },
+    {
+        "image": "https://example.com/images/product4.jpg",
+        "productName": "Running Shoes",
+        "brandName": "SprintMaster",
+        "categoryName": "Footwear",
+        "price": 120.00,
+        "date": "2024-07-20",
+        "ratings": 4.6
+    },
+    {
+        "image": "https://example.com/images/product5.jpg",
+        "productName": "Bluetooth Speaker",
+        "brandName": "SoundWave",
+        "categoryName": "Electronics",
+        "price": 49.99,
+        "date": "2024-08-10",
+        "ratings": 4.4
+    },
+    {
+        "image": "https://example.com/images/product6.jpg",
+        "productName": "Laptop Stand",
+        "brandName": "WorkEase",
+        "categoryName": "Accessories",
+        "price": 35.00,
+        "date": "2024-08-12",
+        "ratings": 4.2
+    },
+    {
+        "image": "https://example.com/images/product7.jpg",
+        "productName": "Electric Kettle",
+        "brandName": "HeatWave",
+        "categoryName": "Home Appliances",
+        "price": 25.99,
+        "date": "2024-08-15",
+        "ratings": 4.1
+    },
+    {
+        "image": "https://example.com/images/product8.jpg",
+        "productName": "Wrist Watch",
+        "brandName": "TimeKeeper",
+        "categoryName": "Accessories",
+        "price": 79.99,
+        "date": "2024-07-30",
+        "ratings": 4.8
+    },
+    {
+        "image": "https://example.com/images/product9.jpg",
+        "productName": "Gaming Mouse",
+        "brandName": "GamePro",
+        "categoryName": "Electronics",
+        "price": 45.50,
+        "date": "2024-07-28",
+        "ratings": 4.7
+    },
+    {
+        "image": "https://example.com/images/product10.jpg",
+        "productName": "Digital Camera",
+        "brandName": "CaptureX",
+        "categoryName": "Photography",
+        "price": 349.99,
+        "date": "2024-08-03",
+        "ratings": 4.6
+    },
+    {
+        "image": "https://example.com/images/product11.jpg",
+        "productName": "Smart Watch",
+        "brandName": "TechTime",
+        "categoryName": "Electronics",
+        "price": 149.99,
+        "date": "2024-08-09",
+        "ratings": 4.5
+    },
+    {
+        "image": "https://example.com/images/product12.jpg",
+        "productName": "Leather Jacket",
+        "brandName": "UrbanWear",
+        "categoryName": "Fashion",
+        "price": 199.99,
+        "date": "2024-08-04",
+        "ratings": 4.7
+    },
+    {
+        "image": "https://example.com/images/product13.jpg",
+        "productName": "Coffee Maker",
+        "brandName": "BrewMaster",
+        "categoryName": "Home Appliances",
+        "price": 79.99,
+        "date": "2024-08-06",
+        "ratings": 4.4
+    },
+    {
+        "image": "https://example.com/images/product14.jpg",
+        "productName": "Wireless Keyboard",
+        "brandName": "KeyFlow",
+        "categoryName": "Electronics",
+        "price": 29.99,
+        "date": "2024-08-08",
+        "ratings": 4.3
+    },
+    {
+        "image": "https://example.com/images/product15.jpg",
+        "productName": "LED Desk Lamp",
+        "brandName": "BrightLife",
+        "categoryName": "Home & Office",
+        "price": 19.99,
+        "date": "2024-07-22",
+        "ratings": 4.5
+    },
+    {
+        "image": "https://example.com/images/product16.jpg",
+        "productName": "Backpack",
+        "brandName": "TravelEase",
+        "categoryName": "Accessories",
+        "price": 49.99,
+        "date": "2024-08-11",
+        "ratings": 4.6
+    },
+    {
+        "image": "https://example.com/images/product17.jpg",
+        "productName": "Action Camera",
+        "brandName": "AdventureCam",
+        "categoryName": "Photography",
+        "price": 299.99,
+        "date": "2024-08-02",
+        "ratings": 4.7
+    },
+    {
+        "image": "https://example.com/images/product18.jpg",
+        "productName": "Water Bottle",
+        "brandName": "HydroSip",
+        "categoryName": "Fitness",
+        "price": 14.99,
+        "date": "2024-07-29",
+        "ratings": 4.2
+    },
+    {
+        "image": "https://example.com/images/product19.jpg",
+        "productName": "Wireless Earbuds",
+        "brandName": "SoundPulse",
+        "categoryName": "Electronics",
+        "price": 79.99,
+        "date": "2024-08-07",
+        "ratings": 4.6
+    },
+    {
+        "image": "https://example.com/images/product20.jpg",
+        "productName": "Laptop",
+        "brandName": "TechPro",
+        "categoryName": "Electronics",
+        "price": 1299.99,
+        "date": "2024-08-13",
+        "ratings": 4.8
+    },
+    {
+        "image": "https://example.com/images/product21.jpg",
+        "productName": "Sneakers",
+        "brandName": "ComfortStep",
+        "categoryName": "Footwear",
+        "price": 89.99,
+        "date": "2024-08-14",
+        "ratings": 4.4
+    },
+    {
+        "image": "https://example.com/images/product22.jpg",
+        "productName": "Graphic T-Shirt",
+        "brandName": "StyleCraft",
+        "categoryName": "Fashion",
+        "price": 25.00,
+        "date": "2024-08-16",
+        "ratings": 4.3
+    },
+    {
+        "image": "https://example.com/images/product23.jpg",
+        "productName": "Blender",
+        "brandName": "SmoothiePro",
+        "categoryName": "Home Appliances",
+        "price": 39.99,
+        "date": "2024-08-17",
+        "ratings": 4.2
+    },
+    {
+        "image": "https://example.com/images/product24.jpg",
+        "productName": "Cookware Set",
+        "brandName": "ChefMaster",
+        "categoryName": "Home & Kitchen",
+        "price": 99.99,
+        "date": "2024-08-18",
+        "ratings": 4.5
+    },
+    {
+        "image": "https://example.com/images/product25.jpg",
+        "productName": "Office Chair",
+        "brandName": "ErgoComfort",
+        "categoryName": "Furniture",
+        "price": 129.99,
+        "date": "2024-08-19",
+        "ratings": 4.6
+    },
+    {
+        "image": "https://example.com/images/product26.jpg",
+        "productName": "Sunglasses",
+        "brandName": "ShadeWave",
+        "categoryName": "Accessories",
+        "price": 59.99,
+        "date": "2024-08-20",
+        "ratings": 4.3
+    },
+    {
+        "image": "https://example.com/images/product27.jpg",
+        "productName": "Fitness Tracker",
+        "brandName": "FitPulse",
+        "categoryName": "Fitness",
+        "price": 99.99,
+        "date": "2024-08-21",
+        "ratings": 4.7
+    },
+    {
+        "image": "https://example.com/images/product28.jpg",
+        "productName": "Portable Charger",
+        "brandName": "PowerPlus",
+        "categoryName": "Electronics",
+        "price": 29.99,
+        "date": "2024-08-22",
+        "ratings": 4.5
+    },
+    {
+        "image": "https://example.com/images/product29.jpg",
+        "productName": "Smart Thermostat",
+        "brandName": "ClimateControl",
+        "categoryName": "Home & Office",
+        "price": 149.99,
+        "date": "2024-08-23",
+        "ratings": 4.6
+    },
+    {
+        "image": "https://example.com/images/product30.jpg",
+        "productName": "Standing Desk",
+        "brandName": "WorkUp",
+        "categoryName": "Furniture",
+        "price": 249.99,
+        "date": "2024-08-24",
+        "ratings": 4.7
+    },
+    {
+        "image": "https://example.com/images/product31.jpg",
+        "productName": "Instant Pot",
+        "brandName": "CookEase",
+        "categoryName": "Home Appliances",
+        "price": 89.99,
+        "date": "2024-08-25",
+        "ratings": 4.5
+    },
+    {
+        "image": "https://example.com/images/product32.jpg",
+        "productName": "Vacuum Cleaner",
+        "brandName": "CleanWave",
+        "categoryName": "Home Appliances",
+        "price": 149.99,
+        "date": "2024-08-26",
+        "ratings": 4.4
+    },
+    {
+        "image": "https://example.com/images/product33.jpg",
+        "productName": "Hair Dryer",
+        "brandName": "StylePro",
+        "categoryName": "Beauty",
+        "price": 29.99,
+        "date": "2024-08-27",
+        "ratings": 4.3
+    },
+    {
+        "image": "https://example.com/images/product34.jpg",
+        "productName": "Electric Toothbrush",
+        "brandName": "BrightSmile",
+        "categoryName": "Health",
+        "price": 59.99,
+        "date": "2024-08-28",
+        "ratings": 4.6
+    },
+    {
+        "image": "https://example.com/images/product35.jpg",
+        "productName": "Smart Lock",
+        "brandName": "SecureHome",
+        "categoryName": "Home Security",
+        "price": 199.99,
+        "date": "2024-08-29",
+        "ratings": 4.7
+    },
+    {
+        "image": "https://example.com/images/product36.jpg",
+        "productName": "E-Reader",
+        "brandName": "BookWave",
+        "categoryName": "Electronics",
+        "price": 129.99,
+        "date": "2024-08-30",
+        "ratings": 4.8
+    },
+    {
+        "image": "https://example.com/images/product37.jpg",
+        "productName": "Massage Gun",
+        "brandName": "RelaxPro",
+        "categoryName": "Health & Wellness",
+        "price": 149.99,
+        "date": "2024-08-31",
+        "ratings": 4.5
+    },
+    {
+        "image": "https://example.com/images/product38.jpg",
+        "productName": "Dehumidifier",
+        "brandName": "DryAir",
+        "categoryName": "Home Appliances",
+        "price": 189.99,
+        "date": "2024-09-01",
+        "ratings": 4.6
+    },
+    {
+        "image": "https://example.com/images/product39.jpg",
+        "productName": "Kitchen Scale",
+        "brandName": "MeasureIt",
+        "categoryName": "Home & Kitchen",
+        "price": 24.99,
+        "date": "2024-09-02",
+        "ratings": 4.3
+    },
+    {
+        "image": "https://example.com/images/product40.jpg",
+        "productName": "Electric Scooter",
+        "brandName": "UrbanMove",
+        "categoryName": "Outdoor",
+        "price": 399.99,
+        "date": "2024-09-03",
+        "ratings": 4.7
+    }
+]
