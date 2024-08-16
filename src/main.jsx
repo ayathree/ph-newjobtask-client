@@ -8,6 +8,9 @@ import {
 import './index.css'
 import Root from './Root';
 import Home from './page/Home';
+import AuthProvider from './route/AuthProvider';
+import LogIn from './page/LogIn';
+import SignUp from './page/Signup';
 
 const router = createBrowserRouter([
   {
@@ -18,12 +21,20 @@ const router = createBrowserRouter([
         path:'/',
         element:<Home></Home>
       },
+      {
+        path:'/login',
+        element:<LogIn></LogIn>
+      },
+      {
+        path:'/register',
+        element:<SignUp></SignUp>
+      }
     ]
   },
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider><RouterProvider router={router} /></AuthProvider>
   </StrictMode>,
 )

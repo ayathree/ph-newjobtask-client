@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Nav = () => {
@@ -52,8 +53,8 @@ const Nav = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn bg-purple-400">Sign In</a>
-    <a className="btn ml-2 bg-blue-300">Sing Up</a>
+   <Link to={'/login'}> <a className="btn bg-purple-400">Sign In</a></Link>
+    <Link to={'/register'}><a className="btn ml-2 bg-blue-300">Sing Up</a></Link>
   </div>
 </div>
             
