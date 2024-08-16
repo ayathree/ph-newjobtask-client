@@ -1,11 +1,33 @@
+import { useContext, useState } from "react";
+import { AuthContext } from "../route/AuthProvider";
 
 
 const SignUp = () => {
+    const {createUser} = useContext(AuthContext);
+const [errorRegister, setErrorRegister] = useState('')
+const[successRegister, setSuccessRegister]= useState('')
     const handleRegister =e=>{
+
+
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password)
+
+        setErrorRegister('');
+        setSuccessRegister('')
+
+        createUser(email, password)
+        .then(result=>{
+          setSuccessRegister('User created successfully')
+            e.target.reset();
+
+            console.log(result.user)
+        })
+        .catch(error=>{
+          setErrorRegister(error.message)
+            console.log(error)
+        })
 
 
     }
@@ -31,6 +53,12 @@ const SignUp = () => {
           <input type="password" name="password" placeholder="password" className="input input-bordered" required />
           
         </div>
+        {
+            errorRegister && <p className="text-red-600">{errorRegister}</p>
+          }
+          {
+            successRegister && <p className="text-green-600">{successRegister}</p>
+          }
         <div className="form-control mt-6">
           <button className="btn btn-primary">Sign Up</button>
         </div>
