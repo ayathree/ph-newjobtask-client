@@ -1,8 +1,49 @@
-# React + Vite
+# Frontend - [Product Gallery]
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+This is the frontend of the Product Gallery application, a web-based platform that allows users to find out product based on their search. The frontend is built using React.js and is styled with Tailwind CSS.
 
-Currently, two official plugins are available:
+## Setup Instructions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Clone the Repository
+```bash
+git clone https://github.com/ayathree/ph-newjobtask-client.git
+cd ph-newjobtask-client
+```
+### 2. Install Dependencies
+```bash
+npm install
+```
+Or if you're using yarn:
+```bash
+yarn install
+```
+### 3.Run the Application
+```bash
+npm start
+```
+Or if you're using yarn:
+```bash
+yarn start
+```
+### 4.Build for Production
+```bash
+npm run build
+```
+Or if you're using yarn:
+```bash
+yarn build
+```
+## Features
+- Searching feature by product name
+- Filtering by brand name, category name, price range
+- Sorting by price high to low, Low to high, Newest date first
+- Pagination from backend
+
+
+      
+
+
+
+
+
