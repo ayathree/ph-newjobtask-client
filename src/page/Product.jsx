@@ -62,7 +62,7 @@ const Product = () => {
             </form>
                </div>
             </div>
-            <div className="flex flex-col lg:flex-row justify-center items-center m-5">
+            <div className="grid lg:grid-cols-6 grid-cols-2 justify-center items-center lg:m-5">
                 <div className="p-5">
                     <p className="text-purple-500 font-bold">Category Name</p>
                     <select onChange={e => setFilter(e.target.value)} value={filter} name="category" className="select select-primary w-full max-w-xs">
@@ -164,12 +164,12 @@ const Product = () => {
                     </div>
                 ))}
             </div>
-            <div className="flex justify-center items-center mt-5">
+            <div className="lg:flex justify-center items-center mt-5 ">
                 {/* Previous button */}
                 <button
                     onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                     disabled={currentPage === 1}
-                    className="px-4 py-2 mx-1 text-gray-500 capitalize bg-blue-300 rounded-md dark:bg-gray-800 dark:text-gray-600 hover:bg-blue-500 hover:text-white"
+                    className="px-4 py-2 mx-1  capitalize bg-purple-500 rounded-md dark:bg-gray-800 dark:text-gray-600  text-white"
                 >
                     Previous
                 </button>
@@ -179,7 +179,7 @@ const Product = () => {
                     <button
                         key={btnNumber}
                         onClick={() => setCurrentPage(btnNumber)}
-                        className={`px-4 py-2 mx-1 transition-colors duration-300 transform bg-blue-300 rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 hover:text-white ${btnNumber === currentPage ? 'bg-blue-500 text-white' : 'text-gray-700'}`}
+                        className={`px-4 py-2 mx-1 transition-colors duration-300 transform  bg-blue-300 rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 hover:text-white ${btnNumber === currentPage ? 'bg-blue-500 text-white' : 'text-gray-700'}`}
                     >
                         {btnNumber}
                     </button>
@@ -189,7 +189,7 @@ const Product = () => {
                 <button
                     onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
                     disabled={currentPage === totalPages}
-                    className="px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-blue-300 rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 hover:text-white"
+                    className="px-4 py-2 mx-1  transition-colors duration-300 transform bg-purple-500 rounded-md dark:bg-gray-800 dark:text-gray-200  text-white"
                 >
                     Next
                 </button>
