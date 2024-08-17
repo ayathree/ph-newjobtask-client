@@ -8,8 +8,8 @@ const Product = () => {
     const [filterTwo, setFilterTwo] = useState('');
     const [sort, setSort] = useState('');
     const [search, setSearch]= useState('')
-    const [minPrice, setMinPrice] = useState(''); // State for min price
-    const [maxPrice, setMaxPrice] = useState(''); // State for max price
+    const [minPrice, setMinPrice] = useState(''); 
+    const [maxPrice, setMaxPrice] = useState(''); 
     const productsPerPage = 6; 
     const btnNumbers = [...Array(totalPages).keys()].map(element => element + 1);
 
@@ -25,7 +25,7 @@ const Product = () => {
             search : search || '',
         });
 
-        fetch(`http://localhost:5000/allProducts?${queryParams.toString()}`)
+        fetch(`https://ph-newjobtask-server.vercel.app/allProducts?${queryParams.toString()}`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data.products);
@@ -53,19 +53,19 @@ const Product = () => {
         <div>
             <div className="flex flex-col lg:flex-row justify-center items-center m-5" >
                <div>
-               <p>Search by Product Name</p>
+               <p className="text-purple-500 font-bold">Search by Product Name</p>
             <form onSubmit={handleSearch}>
             <div className="join">
   <input className="input input-bordered join-item" name="search" placeholder="Product name" />
-  <button className="btn join-item ">Search</button>
+  <button className="btn bg-blue-300 join-item ">Search</button>
 </div>
             </form>
                </div>
             </div>
             <div className="flex flex-col lg:flex-row justify-center items-center m-5">
                 <div className="p-5">
-                    <p>Category Name</p>
-                    <select onChange={e => setFilter(e.target.value)} value={filter} name="category" className="select select-error w-full max-w-xs">
+                    <p className="text-purple-500 font-bold">Category Name</p>
+                    <select onChange={e => setFilter(e.target.value)} value={filter} name="category" className="select select-primary w-full max-w-xs">
                         <option></option>
                         <option>Kitchenware</option>
                         <option>Electronics</option>
@@ -79,8 +79,8 @@ const Product = () => {
                     </select>
                 </div>
                 <div className="p-5">
-                    <p>Brand Name</p>
-                    <select onChange={e => setFilterTwo(e.target.value)} value={filterTwo} name="brand" className="select select-error w-full max-w-xs">
+                    <p className="text-purple-500 font-bold">Brand Name</p>
+                    <select onChange={e => setFilterTwo(e.target.value)} value={filterTwo} name="brand" className="select select-primary w-full max-w-xs">
                         <option></option>
                         <option>HydraFlow</option>
                         <option>GreenSip</option>
@@ -107,8 +107,8 @@ const Product = () => {
                     </select>
                 </div>
                 <div className="p-5">
-                    <p>Sorting By</p>
-                    <select onChange={e => setSort(e.target.value)} value={sort} name="sort" className="select select-error w-full max-w-xs">
+                    <p className="text-purple-500 font-bold">Sorting By</p>
+                    <select onChange={e => setSort(e.target.value)} value={sort} name="sort" className="select select-primary w-full max-w-xs">
                         <option></option>
                         <option value="low">Price Low to High</option>
                         <option value="high">Price High to Low</option>
@@ -116,27 +116,27 @@ const Product = () => {
                     </select>
                 </div>
                 <div className="p-5">
-                    <p>Min Price</p>
+                    <p className="text-purple-500 font-bold">Min Price</p>
                     <input
                         type="text"
                         placeholder="min price"
                         value={minPrice}
                         onChange={e => setMinPrice(e.target.value)}
-                        className="input input-bordered input-error w-full max-w-xs"
+                        className="input input-bordered input-primary w-full max-w-xs"
                     />
                 </div>
                 <div className="p-5">
-                    <p>Max Price</p>
+                    <p className="text-purple-500 font-bold">Max Price</p>
                     <input
                         type="text"
                         placeholder="max price"
                         value={maxPrice}
                         onChange={e => setMaxPrice(e.target.value)}
-                        className="input input-bordered input-error w-full max-w-xs"
+                        className="input input-bordered input-primary w-full max-w-xs"
                     />
                 </div>
                 <div className="p-5">
-                    <button onClick={handleReset} className="btn">Reset</button>
+                    <button onClick={handleReset} className="btn bg-blue-300">Reset</button>
                 </div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center">
@@ -169,7 +169,7 @@ const Product = () => {
                 <button
                     onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                     disabled={currentPage === 1}
-                    className="px-4 py-2 mx-1 text-gray-500 capitalize bg-white rounded-md dark:bg-gray-800 dark:text-gray-600 hover:bg-blue-500 hover:text-white"
+                    className="px-4 py-2 mx-1 text-gray-500 capitalize bg-blue-300 rounded-md dark:bg-gray-800 dark:text-gray-600 hover:bg-blue-500 hover:text-white"
                 >
                     Previous
                 </button>
@@ -179,7 +179,7 @@ const Product = () => {
                     <button
                         key={btnNumber}
                         onClick={() => setCurrentPage(btnNumber)}
-                        className={`px-4 py-2 mx-1 transition-colors duration-300 transform bg-white rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 hover:text-white ${btnNumber === currentPage ? 'bg-blue-500 text-white' : 'text-gray-700'}`}
+                        className={`px-4 py-2 mx-1 transition-colors duration-300 transform bg-blue-300 rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 hover:text-white ${btnNumber === currentPage ? 'bg-blue-500 text-white' : 'text-gray-700'}`}
                     >
                         {btnNumber}
                     </button>
@@ -189,7 +189,7 @@ const Product = () => {
                 <button
                     onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
                     disabled={currentPage === totalPages}
-                    className="px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 hover:text-white"
+                    className="px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-blue-300 rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 hover:text-white"
                 >
                     Next
                 </button>

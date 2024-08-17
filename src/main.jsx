@@ -12,6 +12,7 @@ import AuthProvider from './route/AuthProvider';
 import LogIn from './page/LogIn';
 import SignUp from './page/Signup';
 import Product from './page/Product';
+import Private from './route/Private';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/products',
-        element:<Product></Product>,
+        element:<Private><Product></Product></Private>,
 
 
       }

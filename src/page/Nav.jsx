@@ -35,18 +35,19 @@ const Nav = () => {
        
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="text-purple-500 text-3xl font-bold ">Products Gallery</a>
   </div>
-  <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-      <Link to={'/products'}><a>Product</a></Link>
-    </ul>
-  </div>
+  
   <div className="navbar-end">
   {
         user ? <>
-        <p>{user.email}</p>
-        <button onClick={handleLogout} className="btn">Sign Out</button>
+        <div className=" hidden lg:flex">
+    <ul className="menu menu-horizontal px-1">
+      <Link to={'/products'}><button className="btn bg-blue-300" >Product</button></Link>
+    </ul>
+  </div>
+        
+        <button onClick={handleLogout} className="btn bg-red-400">Sign Out</button>
 
         </> :
         
