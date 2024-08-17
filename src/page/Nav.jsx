@@ -33,15 +33,15 @@ const Nav = () => {
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
         {
           user ? <>
-          <li><a href={'/products'}>Product</a></li>
+          <Link to={'/products'}><li><a>Product</a></li></Link>
           <li><a onClick={handleLogout}>Sign Out</a></li>
          
           
           </>:<>
-          <li><a href={'/login'} >Sign In</a></li>
+          <Link to= {'/login'}><li><a >Sign In</a></li></Link>
           </>
         }
-        <li><a href={'/register'} >Sing Up</a></li>
+       <Link to={'/register'}> <li><a >Sing Up</a></li></Link>
        
       </ul>
     </div>

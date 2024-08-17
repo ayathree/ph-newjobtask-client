@@ -153,7 +153,7 @@ const Product = () => {
                         <p><span className="font-bold">Brand Name :</span> {product.brandName}</p>
                         <p><span className="font-bold">Category :</span> {product.categoryName}</p>
                         <p>{product.description}</p>
-                            <div className="card-actions justify-end">
+                            <div className="card-actions lg:justify-end justify-evenly">
                                 <div className="badge badge-outline">${product.price}</div>
                                 <div className="badge badge-outline"><MdDateRange /> {product.dateAdded}</div>
                                 <div className="badge badge-outline"><IoMdTime />  {product.time}</div>
