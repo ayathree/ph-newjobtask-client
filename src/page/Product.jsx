@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { IoMdTime } from "react-icons/io";
+import { MdDateRange } from "react-icons/md";
 
 const Product = () => {
     const [products, setProducts] = useState([]);
@@ -145,20 +147,16 @@ const Product = () => {
                         <div className="card-body">
                             <h2 className="card-title">
                                 {product.productName}
-                                <br />
-                                {product.categoryName}
-                                <br />
-                                {product.brandName}
-                                <br />
-                                {product.dateAdded}
-                                <br />
-                                {product.price}
-                                <div className="badge badge-secondary">NEW</div>
+                                <div className="badge badge-secondary">{product.ratings}</div>
                             </h2>
-                            <p>Product description or details go here.</p>
+                            <img className="h-[200px]" src={product.productImage} alt="" />
+                        <p><span className="font-bold">Brand Name :</span> {product.brandName}</p>
+                        <p><span className="font-bold">Category :</span> {product.categoryName}</p>
+                        <p>{product.description}</p>
                             <div className="card-actions justify-end">
-                                <div className="badge badge-outline">Fashion</div>
-                                <div className="badge badge-outline">Products</div>
+                                <div className="badge badge-outline">${product.price}</div>
+                                <div className="badge badge-outline"><MdDateRange /> {product.dateAdded}</div>
+                                <div className="badge badge-outline"><IoMdTime />  {product.time}</div>
                             </div>
                         </div>
                     </div>
