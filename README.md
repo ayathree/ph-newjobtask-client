@@ -3,12 +3,15 @@
 ## Description
 This is the frontend of the Product Gallery application, a web-based platform that allows users to find out product based on their search. The frontend is built using React.js and is styled with Tailwind CSS.
 
+ ## Live site
+ [website/link](https://ph-new-jobtask.web.app)
+
 ## Setup Instructions
 
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/ayathree/ph-newjobtask-client.git
-cd ph-newjobtask-client
+cd repo-name
 ```
 ### 2. Install Dependencies
 ```bash
