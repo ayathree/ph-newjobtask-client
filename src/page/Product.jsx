@@ -7,6 +7,7 @@ const Product = () => {
     const [filter, setFilter] = useState('');
     const [filterTwo, setFilterTwo] = useState('');
     const [sort, setSort] = useState('');
+    const [search, setSearch]= useState('')
     const [minPrice, setMinPrice] = useState(''); // State for min price
     const [maxPrice, setMaxPrice] = useState(''); // State for max price
     const productsPerPage = 6; 
@@ -19,8 +20,9 @@ const Product = () => {
             filter: filter || '',
             filterTwo: filterTwo || '',
             sort: sort || '',
-            minPrice: minPrice || '', // Include minPrice in the query params
-            maxPrice: maxPrice || '', // Include maxPrice in the query params
+            minPrice: minPrice || '', 
+            maxPrice: maxPrice || '', 
+            search : search || '',
         });
 
         fetch(`http://localhost:5000/allProducts?${queryParams.toString()}`)
@@ -29,10 +31,37 @@ const Product = () => {
                 setProducts(data.products);
                 setTotalPages(data.totalPages);
             });
-    }, [currentPage, filter, filterTwo, sort, minPrice, maxPrice]); 
+    }, [currentPage, filter, filterTwo, sort, minPrice, maxPrice, search]); 
+
+    const handleReset=()=>{
+        setFilter('');
+        setFilterTwo('');
+        setMaxPrice('');
+        setMinPrice('');
+        setSort('');
+        setSearch('')
+
+    }
+
+    const handleSearch=e=>{
+        e.preventDefault()
+        const text=e.target.search.value
+        setSearch(text)
+    }
 
     return (
         <div>
+            <div className="flex flex-col lg:flex-row justify-center items-center m-5" >
+               <div>
+               <p>Search by Product Name</p>
+            <form onSubmit={handleSearch}>
+            <div className="join">
+  <input className="input input-bordered join-item" name="search" placeholder="Product name" />
+  <button className="btn join-item ">Search</button>
+</div>
+            </form>
+               </div>
+            </div>
             <div className="flex flex-col lg:flex-row justify-center items-center m-5">
                 <div className="p-5">
                     <p>Category Name</p>
@@ -105,6 +134,9 @@ const Product = () => {
                         onChange={e => setMaxPrice(e.target.value)}
                         className="input input-bordered input-error w-full max-w-xs"
                     />
+                </div>
+                <div className="p-5">
+                    <button onClick={handleReset} className="btn">Reset</button>
                 </div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center">
