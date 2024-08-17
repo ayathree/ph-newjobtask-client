@@ -4,83 +4,109 @@ const Product = () => {
     const [products, setProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1); 
     const [totalPages, setTotalPages] = useState(1); 
-    const [filter,setFilter]=useState('')
-    const [filterTwo,setFilterTwo]=useState('')
-    const [sort, setSort]=useState('')
+    const [filter, setFilter] = useState('');
+    const [filterTwo, setFilterTwo] = useState('');
+    const [sort, setSort] = useState('');
+    const [minPrice, setMinPrice] = useState(''); // State for min price
+    const [maxPrice, setMaxPrice] = useState(''); // State for max price
     const productsPerPage = 6; 
     const btnNumbers = [...Array(totalPages).keys()].map(element => element + 1);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allProducts?page=${currentPage}&limit=${productsPerPage}&filter=${filter}&filterTwo=${filterTwo}&sort=${sort}`)
+        const queryParams = new URLSearchParams({
+            page: currentPage,
+            limit: productsPerPage,
+            filter: filter || '',
+            filterTwo: filterTwo || '',
+            sort: sort || '',
+            minPrice: minPrice || '', // Include minPrice in the query params
+            maxPrice: maxPrice || '', // Include maxPrice in the query params
+        });
+
+        fetch(`http://localhost:5000/allProducts?${queryParams.toString()}`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data.products);
                 setTotalPages(data.totalPages);
             });
-    }, [currentPage,filter,filterTwo,sort]); 
+    }, [currentPage, filter, filterTwo, sort, minPrice, maxPrice]); 
 
     return (
         <div>
-            {/* <h2>Products Available: {products.length} </h2> */}
-           <div className="flex flex-col lg:flex-row justify-between items-center ">
-           <div>
-           <p>Category Name</p>
-            <select onChange={e=>setFilter(e.target.value)} value={filter} name="category" className="select select-error w-full max-w-xs">
-  <option></option>
-  <option>Kitchenware</option>
-  <option>Electronics</option>
-  <option>Bedding</option>
-  <option>Furniture</option>
-  <option>Fitness</option>
-  <option>Footwear</option>
-  <option>Apparel</option>
-  <option>Outdoors</option>
-  <option>Personal Care</option>
-</select>
-           </div>
-           <div>
-           <p>Brand Name</p>
-            <select onChange={e=>setFilterTwo(e.target.value)} value={filterTwo} name="brand" className="select select-error w-full max-w-xs">
-<option></option>
-  <option>HydraFlow</option>
- <option >GreenSip</option>
- <option >HeatWave</option>
- <option >QuietTunes</option>
- <option >DreamLand</option>
- <option >BrightHome</option>
- <option >SoundWave</option>
- <option >ComfortZone</option>
- <option >FitFlex</option>
- <option >SpeedRun</option>
- <option >UrbanStyle</option>
- <option >TechGear</option>
- <option >HealthWatch</option>
- <option >PureWater</option>
- <option >CaféBrew</option>
- <option >FreshSqueeze</option>
- <option >AdventureGear</option>
- <option >EcoControl</option>
- <option >PureAir</option>
- <option >BrightSmile</option>
- <option >GlowSkin</option>
- <option >SafeHome</option>
- </select>
- 
-
-
-           </div>
-           <div>
-           <p>Sorting By</p>
-            <select onChange={e=>setSort(e.target.value)} value={sort} name="sort" className="select select-error w-full max-w-xs">
-  <option></option>
-  <option value='low'>Price Low to High</option>
-  <option value='high'>Price High to Low</option>
-  <option value='new'>Date Newest first</option>
-  
-</select>
-
-           </div>
-           </div>
+            <div className="flex flex-col lg:flex-row justify-center items-center m-5">
+                <div className="p-5">
+                    <p>Category Name</p>
+                    <select onChange={e => setFilter(e.target.value)} value={filter} name="category" className="select select-error w-full max-w-xs">
+                        <option></option>
+                        <option>Kitchenware</option>
+                        <option>Electronics</option>
+                        <option>Bedding</option>
+                        <option>Furniture</option>
+                        <option>Fitness</option>
+                        <option>Footwear</option>
+                        <option>Apparel</option>
+                        <option>Outdoors</option>
+                        <option>Personal Care</option>
+                    </select>
+                </div>
+                <div className="p-5">
+                    <p>Brand Name</p>
+                    <select onChange={e => setFilterTwo(e.target.value)} value={filterTwo} name="brand" className="select select-error w-full max-w-xs">
+                        <option></option>
+                        <option>HydraFlow</option>
+                        <option>GreenSip</option>
+                        <option>HeatWave</option>
+                        <option>QuietTunes</option>
+                        <option>DreamLand</option>
+                        <option>BrightHome</option>
+                        <option>SoundWave</option>
+                        <option>ComfortZone</option>
+                        <option>FitFlex</option>
+                        <option>SpeedRun</option>
+                        <option>UrbanStyle</option>
+                        <option>TechGear</option>
+                        <option>HealthWatch</option>
+                        <option>PureWater</option>
+                        <option>CaféBrew</option>
+                        <option>FreshSqueeze</option>
+                        <option>AdventureGear</option>
+                        <option>EcoControl</option>
+                        <option>PureAir</option>
+                        <option>BrightSmile</option>
+                        <option>GlowSkin</option>
+                        <option>SafeHome</option>
+                    </select>
+                </div>
+                <div className="p-5">
+                    <p>Sorting By</p>
+                    <select onChange={e => setSort(e.target.value)} value={sort} name="sort" className="select select-error w-full max-w-xs">
+                        <option></option>
+                        <option value="low">Price Low to High</option>
+                        <option value="high">Price High to Low</option>
+                        <option value="new">Date Newest first</option>
+                    </select>
+                </div>
+                <div className="p-5">
+                    <p>Min Price</p>
+                    <input
+                        type="text"
+                        placeholder="min price"
+                        value={minPrice}
+                        onChange={e => setMinPrice(e.target.value)}
+                        className="input input-bordered input-error w-full max-w-xs"
+                    />
+                </div>
+                <div className="p-5">
+                    <p>Max Price</p>
+                    <input
+                        type="text"
+                        placeholder="max price"
+                        value={maxPrice}
+                        onChange={e => setMaxPrice(e.target.value)}
+                        className="input input-bordered input-error w-full max-w-xs"
+                    />
+                </div>
+            </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center">
                 {products.map(product => (
                     <div key={product.id} className="card bg-purple-200 m-5 shadow-xl">
